@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Usercontrol;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Databaseuser;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('firstpage');
+    return view('welcome');
 });
+// Route::get('/firstpage/{id}', function ($id) {
+//     return view('firstpage',["name"=>"$id"]);
+// });
+
+ Route::view("/form","form");
+ Route::post('/usercontrol', [UserControl::class, 'formsubmit']);
+Route::get("/users",[UsersController::class,'viewload']);
+Route::view("/home","home")->middleware('protectedpage');
+Route::view("/noaccess","noaccess");
+Route::get("/databaseuser",[Databaseuser::class,"index"]);
+
+// Route::group(['middleware'=>['protectedgroup']],function(){
+
+//     Route::view("/home","home");
+//     Route::get("/users",[UsersController::class,'viewload']);
+
+// });
+
+
+// Route::get('/comehere', function () {
+//     return view('form');
+// });

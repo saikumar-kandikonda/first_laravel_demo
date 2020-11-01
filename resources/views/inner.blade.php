@@ -1,0 +1,1 @@
+<h1>inner view pages</h1>
