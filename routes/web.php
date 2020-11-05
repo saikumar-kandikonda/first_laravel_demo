@@ -7,7 +7,7 @@ use App\Http\Controllers\Databaseuser;
 Use App\Http\Controllers\Membersfromdatabase;
 Use App\Http\Controllers\Memberspagination;
 Use App\Http\Controllers\Savedataintodb;
-
+Use App\Http\Controllers\Deletefromdb;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +36,10 @@ Route::get("pagination",[Memberspagination::class,"showdata"]);
 Route::get("list",[Membersfromdatabase::class,"showlist"]);
 Route::Post("savedata",[Savedataintodb::class,"adddata"]);
 Route::view("/savedata","savedataintodb");
+Route::get("deleterecords",[Deletefromdb::class,"deletelist"]);
+Route::get("delete/{id}",[Deletefromdb::class,"delete"]);
+
+
 // Route::group(['middleware'=>['protectedgroup']],function(){
 
 //     Route::view("/home","home");
