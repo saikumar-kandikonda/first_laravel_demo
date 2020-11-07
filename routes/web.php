@@ -38,7 +38,8 @@ Route::Post("savedata",[Savedataintodb::class,"adddata"]);
 Route::view("/savedata","savedataintodb");
 Route::get("deleterecords",[Deletefromdb::class,"deletelist"]);
 Route::get("delete/{id}",[Deletefromdb::class,"delete"]);
-
+Route::get("tobeupdated/{id}",[Deletefromdb::class,"tobeupdated"]);
+Route::Post("update",[Deletefromdb::class,"update"]);
 
 // Route::group(['middleware'=>['protectedgroup']],function(){
 

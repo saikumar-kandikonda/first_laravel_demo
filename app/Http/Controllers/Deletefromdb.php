@@ -19,4 +19,18 @@ class Deletefromdb extends Controller
        return redirect('deleterecords');
 
     }
+    function tobeupdated($id){
+        $data=Deletefromdbmodel::find($id);
+    return view ("editandupdateview",["members"=>$data]);;
+    }
+
+     function update(Request $req){
+         
+        $data=Deletefromdbmodel::find($req->id);
+        $data->id=$req->userid;
+        $data->name=$req->name;
+        $data->save();
+        return view('deletefromdbview');
+    }
+    
 }

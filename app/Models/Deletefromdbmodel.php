@@ -9,5 +9,5 @@ class Deletefromdbmodel extends Model
 {
     use HasFactory;
     public $table="students";
-
+    public $timestamps=false;
 }
