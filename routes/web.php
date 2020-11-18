@@ -8,6 +8,12 @@ Use App\Http\Controllers\Membersfromdatabase;
 Use App\Http\Controllers\Memberspagination;
 Use App\Http\Controllers\Savedataintodb;
 Use App\Http\Controllers\Deletefromdb;
+Use App\Http\Controllers\QuerybuilderControllers;
+Use App\Http\Controllers\Aggregatefunctioncontroller;
+Use App\Http\Controllers\Joinscontroller;
+Use App\Http\Controllers\Accessorscontroller;
+Use App\Http\Controllers\Mutatorcontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +46,11 @@ Route::get("deleterecords",[Deletefromdb::class,"deletelist"]);
 Route::get("delete/{id}",[Deletefromdb::class,"delete"]);
 Route::get("tobeupdated/{id}",[Deletefromdb::class,"tobeupdated"]);
 Route::Post("update",[Deletefromdb::class,"update"]);
+Route::get("query",[QuerybuilderControllers::class,"dboperations"]);
+Route::get("aggregate",[Aggregatefunctioncontroller::class,"aggregate"]);
+Route::get("joins",[Joinscontroller::class,"joins"]);
+Route::get("acess",[Accessorscontroller::class,"acess"]);
+Route::get("mutate",[Mutatorcontroller::class,"mutate"]);
 
 // Route::group(['middleware'=>['protectedgroup']],function(){
 
