@@ -13,6 +13,10 @@ Use App\Http\Controllers\Aggregatefunctioncontroller;
 Use App\Http\Controllers\Joinscontroller;
 Use App\Http\Controllers\Accessorscontroller;
 Use App\Http\Controllers\Mutatorcontroller;
+Use App\Http\Controllers\onetoonecontroller;
+Use App\Http\Controllers\routebidingcontroller;
+Use App\Http\Controllers\mutlipledbcontroller;
+    
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +55,10 @@ Route::get("aggregate",[Aggregatefunctioncontroller::class,"aggregate"]);
 Route::get("joins",[Joinscontroller::class,"joins"]);
 Route::get("acess",[Accessorscontroller::class,"acess"]);
 Route::get("mutate",[Mutatorcontroller::class,"mutate"]);
+Route::get("onetoone",[onetoonecontroller::class,"onetoone"]);
+Route::get("routebinding/{key:Cname}",[routebidingcontroller::class,"routebinding"]);
+Route::get("mutlipledb",[mutlipledbcontroller::class,"mutlipledb"]);
+
 
 // Route::group(['middleware'=>['protectedgroup']],function(){
 
