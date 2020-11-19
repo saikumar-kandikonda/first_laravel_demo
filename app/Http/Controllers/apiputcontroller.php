@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 Use App\Models\apipostmodel;
 
 use Illuminate\Http\Request;
+use Validator;
 
 class apiputcontroller extends Controller
 {
@@ -31,6 +32,28 @@ class apiputcontroller extends Controller
             return "fucke up";
         }
 
+
+       }
+       function searchapi($name){
+        $result=apipostmodel::where("ename","like","%".$name."%")->get();
+        if($result->count()>0){
+          return $result;
+      }else
+      {
+          return "no match found";
+      }
+
+
+       }
+       function savetomydb(request $req){
+     $rules=array("id"=>"required");
+     $validator=validator::make($req->all(),$rules);
+     if($validator->fails()){
+        return $validator->errors();    
+     }else{
+        return ["2323"=>"fdffd"];
+     }
+    
 
        }
 
